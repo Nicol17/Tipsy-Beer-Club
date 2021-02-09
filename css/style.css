@@ -22,8 +22,7 @@
     display: inline;
   }
 
-
-  /*
+/*
 =============== 
 Navbar
 ===============
@@ -52,7 +51,7 @@ Navbar
     padding: 1rem 2rem;
   }
   .nav-logo {
-    height: 6em;
+    height: 150px;
   }
   .nav-toggle {
     background: transparent;
@@ -96,9 +95,7 @@ Navbar
     .shopping-cart {
       text-align: right;
       align-items: right;
-      
     }
-
 
   @media (min-width: 992px) {
     /* hide toggle button */
@@ -143,112 +140,113 @@ Navbar
     .nav-icon:hover {
       color: var(--clr-primary-8);
     }
-  }
+}
 
-  /*
+/*
 =============== 
 Hero
 ===============
 */
 
 .hero {
-    background-image: url(../img/hero2.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-  }
+  background-image: url(../img/hero2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
   
-  .hero h1 {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    color: white;
-    text-transform: uppercase;
-    font-size: 5em;
-    padding-top: 9%;
-  }
+.hero h1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  font-size: 5em;
+  padding-top: 9%;
+}
   
-  .hero h5 {
-    margin: 0 auto;
-    padding-top: 1%;
-    text-align: center;
-    width: 45%;
-    font-size: 1.30em;
-    font-weight: 200;
-    color: white;
-  }
+.hero h5 {
+  margin: 0 auto;
+  padding-top: 1%;
+  text-align: center;
+  width: 45%;
+  font-size: 1.30em;
+  font-weight: 200;
+  color: white;
+}
   
-  .hero .btn-div {
-    width: 100%;
-  }
+.hero .btn-div {
+  width: 100%;
+ }
   
-  .hero .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    margin-top: 2%;
-    font-size: 1.5em;
-    padding: 1%;
-  }
-  /*
-  =============== 
-  About
-  ===============
-  */
+.hero .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 2%;
+  font-size: 1.5em;
+  padding: 1%;
+}
+
+/*
+=============== 
+About
+===============
+*/
   
-  .about h2 {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 3em;
-    font-weight: 200;
-    margin: 5% 0;
-    }
+.about h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: 200;
+  margin: 5% 0;
+}
   
-    .about .about-us {
-      display: flex;
-      flex-direction: row;
-    }
+.about .about-us {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10%;
+}
   
-    .about .about-img {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+.about .about-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
   
-    .about img {
-      width: 70%;
-      height: 80%;
-    }
+.about img {
+  width: 70%;
+  height: auto;
+}
   
-    .about .about-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      flex: 0 0 40%;
-      padding-bottom: 5%;
-    }
+.about .about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 0 0 40%;
+  padding-bottom: 5%;
+}
   
-  
-  
-    .about h3 {
-    margin-bottom: 5%;
-    text-align: center;
-    width: 100%;
-    }
+.about h3 {
+  margin-bottom: 5%;
+  text-align: center;
+  width: 100%;
+}
 
 /*
 =============== 
 Products
 ===============
 */
+
 .products {
   background-color:rgba(0, 0, 0, 0.2);
   padding: 30px;
@@ -338,12 +336,16 @@ Products
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 4px;
   border-radius: 3px;
+  text-align: center;
+  margin: 10px;
 }
 
 .product-info-ibu {
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 4px;
   border-radius: 3px;
+  text-align: center;
+  margin: 10px;
 }
 
 .product-info-description {
@@ -353,11 +355,31 @@ Products
 .add-to-cart [class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
   font-size: 2em;
   font-weight: 500;
-  }
+}
+
+.add-to-cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.add-to-cart p {
+  padding-left: 25px;
+  /* vertical-align: middle; */
+
+}
+
+.add-to-cart i {
+  padding-right: 25px;;
+}
+
+
+
 
 
     
-    /*
+/*
 =============== 
 Footer
 ===============
@@ -374,43 +396,37 @@ footer {
     font-size: 1.45em;
   }
 
-  footer   [class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
-    font-size: 1em;
-    }
+footer   [class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-size: 1em;
+}
   
-  footer .footer-links {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-  }
+footer .footer-links {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
   
-  footer span {
-    margin: 0 auto;
-    
-  }
-  
+footer span {
+  margin: 0 auto;  
+}
   
   
-  footer i {
-    color: white;
-    font-size: 2.5em;
-    margin: 25% auto;
-  }
   
-  footer a {
-    color: white;
-  }
+footer i {
+  color: white;
+  font-size: 2.5em;
+  margin: 25% auto;
+}
   
-  footer p {
-    display: flex;
-    align-items: baseline;
-    color: white;
-    text-align: center;
-  }
+footer a {
+  color: white;
+}
   
-    .about .btn {
-      margin-top: 3%;
-    }
+footer p {
+  display: flex;
+  align-items: baseline;
+  color: white;
+  text-align: center;
+}
   
-    
