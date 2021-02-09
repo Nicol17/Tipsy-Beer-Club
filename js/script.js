@@ -20,7 +20,6 @@ const getBeers = async () => {
     if (tryImg == null) {
         tryImg = "../img/beer.png";
     }
-
     img.src = tryImg;
 
     const cardName = document.createElement('div');
@@ -86,12 +85,9 @@ const getBeers = async () => {
 
 };
 
-getBeers();
-getBeers();
-getBeers();
-getBeers();
-getBeers();
-
+for (let i=0; i<5; i++){
+    getBeers();
+}
 
 function trimDescription(cardInfoDescription) {
     var words = cardInfoDescription.split(" ");
@@ -102,4 +98,3 @@ function trimDescription(cardInfoDescription) {
     };
     return cardInfoDescription;
 }
-
