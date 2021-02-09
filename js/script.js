@@ -81,7 +81,8 @@ const getBeers = async () => {
 
     const info = document.createElement('p');
     cardInfoDescription.appendChild(info);
-    info.innerText = beer.description;
+    info.innerText = trimDescription(beer.description);
+
 
 };
 
@@ -92,4 +93,13 @@ getBeers();
 getBeers();
 
 
+function trimDescription(cardInfoDescription) {
+    var words = cardInfoDescription.split(" ");
+    if (words.length > 35) {
+        words = words.slice(0,34);
+        words = words.join(" ");
+        cardInfoDescription = words + ".";
+    };
+    return cardInfoDescription;
+}
 
