@@ -16,7 +16,12 @@ const getBeers = async () => {
 
     const img = document.createElement('img');
     cardImg.appendChild(img);
-    img.src = beer.image_url;
+    const tryImg = beer.image_url;
+    // console.log(tryImg);
+    // if (tryImg === null) {
+    //     tryImg = "../img/hero.jpg";
+    // }
+    img.src = tryImg;
 
     const cardName = document.createElement('div');
     cardName.classList.add("product-name");
@@ -36,6 +41,7 @@ const getBeers = async () => {
 
     const price = document.createElement('p');
     cardPrice.appendChild(price);
+    price.innerText = "$ " + Number((Math.floor(Math.random() * (1499 - 349 + 1)) + 349) / 100).toFixed(2);
 
     const addToCartBtn = document.createElement('button');
     addToCartBtn.classList.add("add-to-cart");
@@ -77,7 +83,6 @@ const getBeers = async () => {
     cardInfoDescription.appendChild(info);
     info.innerText = trimDescription(beer.description);
 
-    console.log(response.data[0].image_url);
 
 };
 
