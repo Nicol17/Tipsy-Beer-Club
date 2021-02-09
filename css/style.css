@@ -247,7 +247,7 @@ Hero
 
 /*
 =============== 
-About
+Products
 ===============
 */
 .products {
@@ -350,6 +350,11 @@ About
 .product-info-description {
   padding: 10px;
 }
+
+.add-to-cart [class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-size: 2em;
+  font-weight: 500;
+  }
 
 
     
