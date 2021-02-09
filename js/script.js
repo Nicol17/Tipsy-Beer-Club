@@ -16,11 +16,11 @@ const getBeers = async () => {
 
     const img = document.createElement('img');
     cardImg.appendChild(img);
-    const tryImg = beer.image_url;
-    // console.log(tryImg);
-    // if (tryImg === null) {
-    //     tryImg = "../img/hero.jpg";
-    // }
+    var tryImg = beer.image_url;
+    if (tryImg == null) {
+        tryImg = "../img/beer.png";
+    }
+
     img.src = tryImg;
 
     const cardName = document.createElement('div');
@@ -65,7 +65,7 @@ const getBeers = async () => {
 
     const abv = document.createElement('p');
     cardInfoAbv.appendChild(abv);
-    abv.innerText = "ABV: " + beer.abv;
+    abv.innerText = "ABV: " + beer.abv + "%";
 
     const cardInfoIbu = document.createElement('div');
     cardInfoIbu.classList.add("product-info-ibu");
