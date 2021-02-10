@@ -1,3 +1,15 @@
+(function() {
+    const cartInfo = document.getElementById('cart-info');
+    const cart = document.getElementById('cart');
+
+    cartInfo.addEventListener('click', function() {
+        cart.classList.toggle('show-cart');
+    });
+})();
+
+
+
+
 const productsDiv = document.querySelector('.products');
 
 
@@ -45,6 +57,77 @@ const getBeers = async () => {
     const addToCartBtn = document.createElement('button');
     addToCartBtn.classList.add("add-to-cart");
     card.appendChild(addToCartBtn);
+    (function(){
+
+    const cartBtn = document.querySelectorAll('.add-to-cart');
+    
+        cartBtn.forEach(function(btn) {
+            btn.addEventListener('click', function(event){
+    
+                let thumbnail = event.target.parentElement.parentElement.firstChild.firstChild.src;
+                let name = event.target.parentElement.parentElement.firstChild.nextSibling.firstChild.innerText;
+                let price = event.target.parentElement.parentElement.firstChild.nextSibling.nextSibling.nextSibling.innerText
+                price = Number(price.slice(2, price.length));
+                
+
+
+                const beer = {};
+                beer.img = thumbnail;
+                beer.name = name;
+                beer.price = price;
+
+
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `<img src="${beer.img}" class="img-fluid rounded-circle" id="item-img" alt="beer image">
+                <div class="item-text">
+                  <p id="cart-item-title" class="font-weight-bold mb-0">${beer.name}</p>
+                  <span>$</span>
+                  <span id="cart-item-price" class="cart-item-price" class="mb-0">${beer.price}</span>
+                </div>
+                <a href="#" id='cart-item-remove' class="cart-item-remove">
+                  <i class="fas fa-trash"></i>
+                </a>`;
+
+                const cart = document.getElementById('cart');
+                const total = document.querySelector('.cart-total-container');
+
+
+                cart.insertBefore(cartItem, total);
+                alert("Your beer has been poured into the Barrel!");
+                showTotal();
+
+            })
+    
+        })
+    
+
+        function showTotal() {
+            const total = [];
+            const items = document.querySelectorAll('.cart-item-price');
+            items.forEach(function(item){
+                total.push(parseFloat(item.innerText));
+            });
+        
+
+            const totalPrice = total.reduce(function(total, item){
+                total += item;
+                
+                return total;
+            }, 0)
+
+            console.log(totalPrice);
+
+            document.getElementById('cart-total').textContent = totalPrice;
+            document.querySelector('.item-total').textContent = totalPrice;
+            document.getElementById('item-count').textContent= total.length;
+
+        }
+
+
+    
+    })();
+    
 
     const buttonText = document.createElement('p');
     addToCartBtn.appendChild(buttonText);
@@ -91,10 +174,13 @@ for (let i=0; i<5; i++){
 
 function trimDescription(cardInfoDescription) {
     var words = cardInfoDescription.split(" ");
-    if (words.length > 35) {
+    if (words.length > 30) {
         words = words.slice(0,34);
         words = words.join(" ");
         cardInfoDescription = words + ".";
     };
     return cardInfoDescription;
 }
+
+
+
