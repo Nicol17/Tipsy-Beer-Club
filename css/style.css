@@ -163,6 +163,18 @@ Cart
   color: #fff;
 }
 
+.cart-total-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cart-buttons-container{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
 .cart {
   position: absolute;
@@ -182,8 +194,16 @@ Cart
   padding: 2rem 1.5rem;
   /* transform: rotateY(-360deg); */
 }
+
 .cart-item {
   transition: all 2s ease-in-out;
+  display: flex;
+}
+
+.item-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .img-fluid {
