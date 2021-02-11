@@ -7,6 +7,8 @@
     });
 })();
 
+let cartItemId = 1;
+
 const productsDiv = document.querySelector('.products');
 
 async function getBeers() {
@@ -74,6 +76,7 @@ function addToCart(idOr) {
 
                 const cartItem = document.createElement('div');
                 cartItem.classList.add('cart-item');
+                cartItem.id = cartItemId++;
                 cartItem.innerHTML = `
                     <img src="${beer.img}" class="img-fluid rounded-circle" id="item-img" alt="beer image">
                     <div class="item-text">
@@ -92,6 +95,7 @@ function addToCart(idOr) {
                 cart.insertBefore(cartItem, total);
                 alert("Your beer has been poured into the Barrel!");
                 showTotal();
+                clearItem(cartItem.id);
             }
         })
     })
@@ -111,7 +115,7 @@ function addToCart(idOr) {
 
         document.getElementById('cart-total').textContent = totalPrice;
         document.querySelector('.item-total').textContent = totalPrice;
-        document.querySelector('.item-count').textContent= total.length;
+        document.querySelector('.item-count').textContent = total.length;
     }
 
 }
@@ -139,4 +143,50 @@ function tryImg(imgurl) {
 
 function randomPrice() {
     return "$ " + Number((Math.floor(Math.random() * (1499 - 349 + 1)) + 349) / 100).toFixed(2);
+}
+
+const clearAnchor = document.getElementById('clear-cart');
+
+
+clearAnchor.addEventListener('click', function() {
+    const cartItems = document.querySelectorAll('.cart-item');
+    document.getElementById('cart-total').innerHTML = `
+    <h5>  <strong id="cart-total" class="font-weight-bold">0.00</strong> </h5>`;
+    document.querySelector('.item-total').textContent = '$ 0.00';
+    document.querySelector('.item-count').textContent= '0 beer(s)';
+
+    cartItems.forEach(function(item) {
+
+        item.innerHTML = ``;
+    });
+})
+
+function getClearIcons(){
+    return document.querySelectorAll('.cart-item-remove');
+
+}
+
+function clearItem(idOr){
+    getClearIcons().forEach(function(btn) {
+        btn.addEventListener('click', function(event) {
+            let id = event.target.parentElement.parentElement.id;
+            if (idOr == id){
+            let cartDiv = event.target.parentElement.parentElement.parentElement;
+            let cartItem = event.target.parentElement.parentElement;
+            let itemPrice = event.target.parentElement.parentElement.firstChild.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.innerText;
+            cartDiv.removeChild(cartItem);
+            
+            let cartTotal = document.getElementById('cart-total').innerText;
+            cartTotal -= itemPrice;
+            document.getElementById('cart-total').innerHTML = `
+            <h5>  <strong id="cart-total" class="font-weight-bold">${cartTotal.toFixed(2)}</strong> </h5>`;
+            document.querySelector('.item-total').textContent = `$ ${cartTotal.toFixed(2)}`;
+
+            let itemTotal = document.querySelector('.item-count').textContent;
+
+            document.querySelector('.item-count').textContent= `${parseInt(itemTotal)-1} beer(s)`;
+
+            }
+        })
+    })
 }
