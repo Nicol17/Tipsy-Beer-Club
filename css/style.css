@@ -9,18 +9,34 @@
     color: var(--clr-grey-1);
     line-height: 1.5;
     font-size: 0.875rem;
-    font-family: 'Lato';
+    font-family: 'Raleway', sans-serif;
   }
   ul {
     list-style-type: none;
   }
   a {
     text-decoration: none;
+    color: #000;
   }
 
   i {
     display: inline;
   }
+
+
+
+  /*
+=============== 
+fonts 
+
+    font-family: 'Bebas Neue', cursive;
+
+    font-family: 'Codystar', cursive;
+
+    font-family: 'Raleway', sans-serif;
+
+===============
+*/
 
 /*
 =============== 
@@ -63,19 +79,19 @@ Navbar
   .nav-toggle:hover {
     transform: scale(1.2);
   }
-  .nav-link {
+  .nav-links li {
     display: block;
-    padding: 1rem 2rem;
-    text-transform: capitalize;
-    letter-spacing: var(--spacing);
-    transition: var(--transition);
-    color: var(--clr-grey-1);
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    transition: .75s ease-in-out;
+    color: #000;
     cursor: pointer;
     font-size: 1rem;
+    font-weight:700;
   }
-  .nav-link:hover {
-    color: var(--clr-primary-1);
-    background: var(--clr-primary-8);
+  .nav-links li:hover {
+    color: #ef7998;
+    transform: scale(1.5);
     /* padding-left: 2.25rem; */
   }
   .nav-links {
@@ -257,6 +273,7 @@ Hero
 }
   
 .hero h1 {
+  font-family: 'Codystar', cursive;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -265,16 +282,17 @@ Hero
   width: 100%;
   color: white;
   text-transform: uppercase;
-  font-size: 5em;
-  padding-top: 9%;
+  font-size: 7em;
+  padding-top: 5%;
 }
   
 .hero h5 {
+  font-family: 'Bebas Neue', cursive;
   margin: 0 auto;
   padding-top: 1%;
   text-align: center;
-  width: 45%;
-  font-size: 1.30em;
+  width: 50%;
+  font-size: 1.75em;
   font-weight: 200;
   color: white;
 }
@@ -289,8 +307,28 @@ Hero
   justify-content: center;
   margin: 0 auto;
   margin-top: 2%;
-  font-size: 1.5em;
+  font-size: 2em;
   padding: 1%;
+  border: none;
+  background: none;
+  font-weight: 400;
+  padding: 20px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  text-align: center;
+  transition: all 0.3s ease 0s;
+}
+
+.hero .btn a {
+  color: #fff;
+}
+
+.hero .btn:hover {
+  color: #404040;
+  font-weight: 700;
+  letter-spacing: 3px;
+  background: #404040;
+  transition: all 0.3s ease 0s;
 }
 
 /*
@@ -506,9 +544,17 @@ footer .footer-links {
   
 footer span {
   margin: 0 auto;  
+  padding: 0 2rem;
+  transition: .25s ease-in-out;
+  border-radius: 15px;
+  border: 0px solid white;
 }
   
-  
+footer span:hover {
+  font-size: 1.75rem;
+  border-radius: 15px;
+  border: 3px solid white;
+}
   
 footer i {
   color: white;
