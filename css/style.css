@@ -263,6 +263,7 @@ Cart
   padding: 5%;
   transition: .75s ease-in-out;
   margin: 3%;
+  text-transform: uppercase;
 }
 
 btn:hover {
