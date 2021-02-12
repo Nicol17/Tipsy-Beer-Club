@@ -9,9 +9,11 @@
 
 let cartItemId = 1;
 
-const productsDiv = document.querySelector('.products');
+let counter = 1;
 
-async function getBeers() {
+let productsDiv = document.querySelector(`.products-${counter}`);
+
+async function getBeers(productsDiv) {
 
     const option = { headers: { 'Accept': 'application/json' } };
     const response = await axios.get('https://api.punkapi.com/v2/beers/random', option);
@@ -82,7 +84,7 @@ function addToCart(idOr) {
                     <div class="item-text">
                         <p id="cart-item-title" class="font-weight-bold mb-0">${beer.name}</p>
                         <span>$</span>
-                        <span id="cart-item-price" class="cart-item-price" class="mb-0">${beer.price}</span>
+                        <span id="cart-item-price" class="cart-item-price" class="mb-0">${(beer.price).toFixed(2)}</span>
                         </div>
                         <a href="#" id='cart-item-remove' class="cart-item-remove">
                             <i class="fas fa-trash"></i>
@@ -113,15 +115,11 @@ function addToCart(idOr) {
             return total;
         }, 0)
 
-        document.getElementById('cart-total').textContent = totalPrice;
-        document.querySelector('.item-total').textContent = totalPrice;
-        document.querySelector('.item-count').textContent = total.length;
+        document.getElementById('cart-total').textContent = (totalPrice).toFixed(2);
+        document.querySelector('.item-total').textContent = '$' + (totalPrice).toFixed(2) ;
+        document.querySelector('.item-count').textContent = total.length + ' beer(s)';
     }
 
-}
-
-for (let i=0; i<5; i++){
-    getBeers();
 }
 
 function trimDescription(cardInfoDescription) {
@@ -188,4 +186,23 @@ function clearItem(idOr){
             }
         })
     })
+}
+
+loadData(productsDiv);
+
+
+function loadData(productsDiv){
+    for (let i=0; i<5; i++){
+        getBeers(productsDiv);
+    }
+}
+
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  if (document.body.scrollTop > 1500 || document.documentElement.scrollTop > 1500) {
+    ++counter;
+    productsDiv = document.querySelector(`.products-${counter}`);
+    loadData(productsDiv);
+  }
 }
