@@ -394,7 +394,59 @@ Products
 ===============
 */
 
-.products {
+.products-1 {
+  background-color:rgba(0, 0, 0, 0.2);
+  padding: 30px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 20%;
+  padding-right: 20%;
+
+}
+
+.products-2 {
+  background-color:rgba(0, 0, 0, 0.2);
+  padding: 30px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 20%;
+  padding-right: 20%;
+
+}
+
+.products-3 {
+  background-color:rgba(0, 0, 0, 0.2);
+  padding: 30px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 20%;
+  padding-right: 20%;
+
+}
+
+.products-4 {
+  background-color:rgba(0, 0, 0, 0.2);
+  padding: 30px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 20%;
+  padding-right: 20%;
+
+}
+
+.products-5 {
   background-color:rgba(0, 0, 0, 0.2);
   padding: 30px;
 
