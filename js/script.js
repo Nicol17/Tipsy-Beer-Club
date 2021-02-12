@@ -175,8 +175,7 @@ function clearItem(idOr){
             
             let cartTotal = document.getElementById('cart-total').innerText;
             cartTotal -= itemPrice;
-            document.getElementById('cart-total').innerHTML = `
-            <h5>  <strong id="cart-total" class="font-weight-bold">${cartTotal.toFixed(2)}</strong> </h5>`;
+            document.getElementById('cart-total').innerHTML = `${cartTotal.toFixed(2)}`;
             document.querySelector('.item-total').textContent = `$ ${cartTotal.toFixed(2)}`;
 
             let itemTotal = document.querySelector('.item-count').textContent;

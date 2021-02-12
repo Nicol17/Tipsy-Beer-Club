@@ -187,6 +187,12 @@ Cart
   text-align: center;
 }
 
+.cart-total-container h5 {
+  font-size: large;
+  padding-bottom: 5%;
+}
+
+
 .cart-buttons-container{
   align-items: center;
   justify-content: center;
@@ -217,6 +223,24 @@ Cart
   display: flex;
 }
 
+/* .cart-item img {
+  background: #fff;
+  border-radius: 50%;
+  padding: 10%;
+  z-index: 0
+} */
+
+
+
+.cart-item .item-text {
+  padding: 5%;
+}
+
+.cart-item .item-text p {
+  padding: 5%;
+}
+
+
 .item-text {
   display: flex;
   align-items: center;
@@ -231,6 +255,7 @@ Cart
 .cart-item-remove {
   color: var(--mainPink);
   transition: all 1s ease-in-out;
+  padding-top: 10%;
 }
 .cart-item-remove:hover {
   transform: scale(1.1);
