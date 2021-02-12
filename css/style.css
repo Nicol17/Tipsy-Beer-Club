@@ -171,9 +171,10 @@ Cart
   cursor: pointer;
 }
 .cart-info:hover {
-  background: #ef7998;
-  border-color: #ef7998;
+  background: rgb(179, 179, 179);;
+  border-color: rgb(200, 200, 200);;
   color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .cart-info:hover .cart-info__icon {
   color: #fff;
@@ -205,7 +206,7 @@ Cart
 }
 
 .show-cart {
-  background-color: #ef7998;
+  background-color: rgb(179, 179, 179);
   width: 18rem;
   padding: 2rem 1.5rem;
   /* transform: rotateY(-360deg); */
@@ -233,28 +234,37 @@ Cart
 }
 .cart-item-remove:hover {
   transform: scale(1.1);
-  color: var(--mainBlack);
+  color: #ffffff;
 }
 #cart-item-price {
   font-size: 0.8rem;
 }
 
 /* cart buttons */
+.btn {
+  background: rgb(225, 225, 225);
+  padding: 5%;
+}
+
+btn:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 .btn-pink {
-  color: var(--mainPink) !important;
-  border-color: var(--mainPink) !important;
+  color: red;
+  border-color: red;
 }
 .btn-black {
-  color: var(--mainBlack) !important;
-  border-color: var(--mainBlack) !important;
+  color: #ffffff;
+  border-color: #ffffff;
 }
 .btn-black:hover {
-  color: var(--mainPink) !important;
-  background: var(--mainBlack) !important;
+  color: red;
+  background: #ffffff;
 }
 .btn-pink:hover {
-  background: var(--mainPink) !important;
-  color: var(--mainBlack) !important;
+  background: red;
+  color: #ffffff;
 }
 
 /*
@@ -456,6 +466,10 @@ Products
   padding: 1%;
   border: 0;
   border-radius: 5px;
+}
+
+.add-to-cart:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .product-info {
