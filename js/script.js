@@ -150,8 +150,7 @@ const clearAnchor = document.getElementById('clear-cart');
 
 clearAnchor.addEventListener('click', function() {
     const cartItems = document.querySelectorAll('.cart-item');
-    document.getElementById('cart-total').innerHTML = `
-    <h5>  <strong id="cart-total" class="font-weight-bold">0.00</strong> </h5>`;
+    document.getElementById('cart-total').innerHTML = `0.00`;
     document.querySelector('.item-total').textContent = '$ 0.00';
     document.querySelector('.item-count').textContent= '0 beer(s)';
 
